@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import hero from './../assets/1.jpg'
 
 const Home = () => {
   return (
@@ -26,7 +27,7 @@ const Home = () => {
       {/* Hero Section - Full Screen with Gradient Overlay */}
       <section className="h-screen w-full flex items-center justify-center relative overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-r from-sky-950/80 to-indigo-950/80"></div>
-        <div className="absolute inset-0 opacity-10 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay" style={{ backgroundImage: `url(${hero})` }}></div>
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
             Transforming Ideas into <span className="text-sky-400 block sm:inline">Digital Reality</span>
@@ -99,7 +100,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30 hover:transform hover:scale-105 transition-all duration-300">
-            <div className="bg-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-lg">
+            <div className="bg-sky-600 w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-lg">
               <span className="text-2xl text-white">📱</span>
             </div>
             <h3 className="text-2xl font-semibold text-white mb-4">Mobile Apps</h3>
@@ -150,7 +151,7 @@ const Home = () => {
               <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-600 to-transparent -z-10"></div>
             </div>
             <div className="text-center relative">
-              <div className="bg-indigo-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-indigo-600/30">2</div>
+              <div className="bg-sky-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-indigo-600/30">2</div>
               <h3 className="text-2xl font-semibold text-white mb-3">Planning</h3>
               <p className="text-sky-200">We create a detailed roadmap for your project</p>
               <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-indigo-600 to-transparent -z-10"></div>
