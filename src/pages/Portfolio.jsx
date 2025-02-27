@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../components/Navbar';
 
 const Portfolio = () => {
   const currentYear = new Date().getFullYear();
   const [filter, setFilter] = useState('all');
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   // Navigation links for easier updates
   const navLinks = [
     { to: "/", label: "Home" },
@@ -14,7 +15,7 @@ const Portfolio = () => {
     { to: "/portfolio", label: "Portfolio" },
     { to: "/contact", label: "Contact" }
   ];
-  
+
   const projects = [
     {
       id: 1,
@@ -59,55 +60,15 @@ const Portfolio = () => {
       description: 'Responsive website with online ordering system and reservation management.'
     }
   ];
-  
-  const filteredProjects = filter === 'all' 
-    ? projects 
+
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.category === filter);
-  
+
   return (
     <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-indigo-950">
       {/* Header - Fixed for better navigation */}
-      <header className="bg-sky-950/95 backdrop-blur-sm shadow-md fixed w-full z-10 border-b border-sky-800/30">
-        <div className="w-full mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-white tracking-tight">SwiftTech</span>
-            <button 
-              className="md:hidden bg-sky-600 text-white p-2 rounded-md hover:bg-sky-700 transition-colors"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              Menu
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-8">
-            {navLinks.map((link, index) => (
-              <Link 
-                key={index}
-                to={link.to} 
-                className={`text-white font-medium hover:text-sky-400 transition-colors ${link.to === "/portfolio" ? "text-sky-400" : ""}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          
-          {/* Mobile menu */}
-          {menuOpen && (
-            <nav className="md:hidden mt-4 py-2">
-              <div className="flex flex-col space-y-2">
-                {navLinks.map((link, index) => (
-                  <Link 
-                    key={index}
-                    to={link.to} 
-                    className={`text-white hover:text-sky-400 transition-colors py-2 ${link.to === "/portfolio" ? "text-sky-400 font-medium" : ""}`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </nav>
-          )}
-        </div>
-      </header>
+      <NavBar/>
 
       {/* Hero Section */}
       <section className="pt-32 pb-16">
@@ -121,65 +82,67 @@ const Portfolio = () => {
           </p>
         </div>
       </section>
-      
+
       {/* Portfolio Filter */}
       <section className="w-full mx-auto px-4 py-6">
         <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-12 max-w-4xl mx-auto overflow-x-auto border border-sky-800/30">
           <div className="flex flex-wrap justify-center gap-4">
-            <button 
+            {/* <button
               onClick={() => setFilter('all')}
-              className={`px-6 py-3 rounded-lg transition-colors ${
-                filter === 'all' 
-                  ? 'bg-sky-600 text-white shadow-lg shadow-sky-600/30' 
-                  : 'bg-white/5 text-sky-200 hover:bg-white/10 border border-sky-700/30'
-              }`}
+              className={`px-6 py-3 rounded-lg transition-colors ${filter === 'all'
+                  ? 'bg-sky-600 text-white shadow-lg shadow-sky-600/30'
+                  : 'bg-white/5 text-sky-200 hover:bg-sky-500 hover:text-sky-200 border border-sky-700/30'
+                }`}
+            > */}
+            <button
+              onClick={() => setFilter('all')}
+              className={`px-6 py-3 rounded-lg transition-colors ${filter === 'all'
+                  ? 'bg-teal-600 text-teal-500 shadow-lg shadow-teal-600/30'
+                  : 'bg-white/5 text-sky-500 hover:bg-sky-500 hover:text-sky-300 border border-sky-700/30'
+                }`}
             >
               All Projects
             </button>
-            <button 
+            <button
               onClick={() => setFilter('web')}
-              className={`px-6 py-3 rounded-lg transition-colors ${
-                filter === 'web' 
-                  ? 'bg-sky-600 text-white shadow-lg shadow-sky-600/30' 
-                  : 'bg-white/5 text-sky-200 hover:bg-white/10 border border-sky-700/30'
-              }`}
+              className={`px-6 py-3 rounded-lg transition-colors ${filter === 'web'
+                  ? 'bg-sky-600 text-sky-500 shadow-lg shadow-sky-600/30'
+                  : 'bg-white/5 text-sky-500 hover:bg-sky-500 hover:text-sky-300 border border-sky-700/30'
+                }`}
             >
               Web Development
             </button>
-            <button 
+            <button
               onClick={() => setFilter('mobile')}
-              className={`px-6 py-3 rounded-lg transition-colors ${
-                filter === 'mobile' 
-                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' 
-                  : 'bg-white/5 text-sky-200 hover:bg-white/10 border border-sky-700/30'
-              }`}
+              className={`px-6 py-3 rounded-lg transition-colors ${filter === 'mobile'
+                  ? 'bg-indigo-600 text-indigo-500 shadow-lg shadow-indigo-600/30'
+                  : 'bg-white/5 text-sky-500 hover:bg-sky-500 hover:text-sky-300 border border-sky-700/30'
+                }`}
             >
               Mobile Apps
             </button>
-            <button 
+            <button
               onClick={() => setFilter('branding')}
-              className={`px-6 py-3 rounded-lg transition-colors ${
-                filter === 'branding' 
-                  ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/30' 
-                  : 'bg-white/5 text-sky-200 hover:bg-white/10 border border-sky-700/30'
-              }`}
+              className={`px-6 py-3 rounded-lg transition-colors ${filter === 'branding'
+                  ? 'bg-cyan-600 text-cyan-500 shadow-lg shadow-cyan-600/30'
+                  : 'bg-white/5 text-sky-500 hover:bg-sky-500 hover:text-sky-300 border border-sky-700/30'
+                }`}
             >
               Branding
             </button>
-            <button 
+            <button
               onClick={() => setFilter('marketing')}
-              className={`px-6 py-3 rounded-lg transition-colors ${
-                filter === 'marketing' 
-                  ? 'bg-teal-600 text-white shadow-lg shadow-teal-600/30' 
-                  : 'bg-white/5 text-sky-200 hover:bg-white/10 border border-sky-700/30'
-              }`}
+              className={`px-6 py-3 rounded-lg transition-colors ${filter === 'marketing'
+                  ? 'bg-teal-600 text-teal-500 shadow-lg shadow-teal-600/30'
+                  : 'bg-white/5 text-sky-500 hover:bg-sky-500 hover:text-sky-300 border border-sky-700/30'
+                }`}
             >
               Marketing
             </button>
           </div>
         </div>
       </section>
-      
+
       {/* Portfolio Grid */}
       <section className="w-full mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -209,7 +172,7 @@ const Portfolio = () => {
           ))}
         </div>
       </section>
-      
+
       {/* Our Achievements Section */}
       <section className="bg-sky-900/30 py-16 backdrop-blur-sm border-y border-sky-800/30">
         <div className="w-full mx-auto px-4">

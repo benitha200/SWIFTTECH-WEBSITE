@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import image from './../assets/1.jpg'
+import me from './../assets/3.jpg';
+import NavBar from '../components/Navbar';
 
 const About = () => {
   const currentYear = new Date().getFullYear();
@@ -16,27 +19,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-indigo-950">
       {/* Header - Fixed for better navigation */}
-      <header className="bg-sky-950/95 backdrop-blur-sm shadow-md fixed w-full z-10 border-b border-sky-800/30">
-        <div className="w-full mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-white tracking-tight">SwiftTech</span>
-            <button className="md:hidden bg-sky-600 text-white p-2 rounded-md hover:bg-sky-700 transition-colors">
-              Menu
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-8">
-            {navLinks.map((link, index) => (
-              <Link 
-                key={index}
-                to={link.to} 
-                className={`text-white font-medium hover:text-sky-400 transition-colors ${link.to === "/about" ? "text-sky-400" : ""}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
+      <NavBar/>
 
       {/* Hero Section */}
       <section className="pt-32 pb-16">
@@ -60,7 +43,7 @@ const About = () => {
               </div>
               <h2 className="text-3xl font-semibold text-white mb-4">Our Story</h2>
               <p className="text-sky-200 mb-4">
-                Founded in 2015, our company has grown from a small team of passionate designers and developers
+                Founded in 2020, our company has grown from a small team of passionate designers and developers
                 into a full-service digital agency. We believe in creating meaningful digital experiences
                 that connect brands with their audiences.
               </p>
@@ -70,7 +53,7 @@ const About = () => {
               </p>
             </div>
             <div className="md:w-1/2">
-              <div className="bg-sky-900/30 h-64 rounded-lg border border-sky-800/30"></div>
+              <img src={image} className="bg-sky-900/30 h-64 rounded-lg border border-sky-800/30"/>
             </div>
           </div>
         </div>
@@ -83,21 +66,21 @@ const About = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-sky-700/30 w-32 h-32 rounded-full mx-auto mb-4 border border-sky-400/30"></div>
-              <h3 className="text-xl font-semibold text-white mb-1">Jane Doe</h3>
+              <h3 className="text-xl font-semibold text-white mb-1">Benitha louange Iyuyisenga</h3>
               <p className="text-sky-300 mb-3">Founder & CEO</p>
-              <p className="text-sky-200 text-sm">With over 15 years of industry experience, Jane leads our company with vision and expertise.</p>
+              <p className="text-sky-200 text-sm">With over 5 years of industry experience, Benitha leads our company with vision and expertise.</p>
             </div>
             <div className="text-center">
               <div className="bg-sky-700/30 w-32 h-32 rounded-full mx-auto mb-4 border border-sky-400/30"></div>
-              <h3 className="text-xl font-semibold text-white mb-1">John Smith</h3>
-              <p className="text-sky-300 mb-3">Creative Director</p>
+              <h3 className="text-xl font-semibold text-white mb-1">Sam Ngoga</h3>
+              <p className="text-sky-300 mb-3">Marketing Manager</p>
               <p className="text-sky-200 text-sm">John brings creativity and innovation to every project, ensuring visual excellence.</p>
             </div>
             <div className="text-center">
               <div className="bg-sky-700/30 w-32 h-32 rounded-full mx-auto mb-4 border border-sky-400/30"></div>
-              <h3 className="text-xl font-semibold text-white mb-1">Emily Johnson</h3>
+              <h3 className="text-xl font-semibold text-white mb-1">Byamungu Lewis</h3>
               <p className="text-sky-300 mb-3">Lead Developer</p>
-              <p className="text-sky-200 text-sm">Emily's technical expertise drives our development process with efficiency and precision.</p>
+              <p className="text-sky-200 text-sm">Lewis's technical expertise drives our development process with efficiency and precision.</p>
             </div>
             <div className="text-center">
               <div className="bg-sky-700/30 w-32 h-32 rounded-full mx-auto mb-4 border border-sky-400/30"></div>

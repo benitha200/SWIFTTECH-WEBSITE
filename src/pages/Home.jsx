@@ -1,34 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import hero from './../assets/1.jpg'
+import NavBar from '../components/Navbar';
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-indigo-950">
       {/* Header - Fixed for better navigation */}
-      <header className="bg-sky-950/95 backdrop-blur-sm shadow-md fixed w-full z-10 border-b border-sky-800/30">
-        <div className="w-full mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-white tracking-tight">SwiftTech</span>
-            <button className="md:hidden bg-sky-600 text-white p-2 rounded-md hover:bg-sky-700 transition-colors">
-              Menu
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-white font-medium hover:text-sky-400 transition-colors">Home</Link>
-            <Link to="/about" className="text-white font-medium hover:text-sky-400 transition-colors">About</Link>
-            <Link to="/services" className="text-white font-medium hover:text-sky-400 transition-colors">Services</Link>
-            <Link to="/portfolio" className="text-white font-medium hover:text-sky-400 transition-colors">Portfolio</Link>
-            <Link to="/contact" className="text-white font-medium hover:text-sky-400 transition-colors">Contact</Link>
-          </nav>
-        </div>
-      </header>
+      <NavBar/>
 
       {/* Hero Section - Full Screen with Gradient Overlay */}
       <section className="h-screen w-full flex items-center justify-center relative overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-r from-sky-950/80 to-indigo-950/80"></div>
         <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay" style={{ backgroundImage: `url(${hero})` }}></div>
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-1">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
             Transforming Ideas into <span className="text-sky-400 block sm:inline">Digital Reality</span>
           </h1>
