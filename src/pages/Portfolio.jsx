@@ -66,7 +66,7 @@ const Portfolio = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-indigo-950">
+    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-sky-950">
       {/* Header - Fixed for better navigation */}
       <NavBar/>
 
@@ -115,7 +115,7 @@ const Portfolio = () => {
             <button
               onClick={() => setFilter('mobile')}
               className={`px-6 py-3 rounded-lg transition-colors ${filter === 'mobile'
-                  ? 'bg-indigo-600 text-indigo-500 shadow-lg shadow-indigo-600/30'
+                  ? 'bg-sky-600 text-sky-500 shadow-lg shadow-sky-600/30'
                   : 'bg-white/5 text-sky-500 hover:bg-sky-500 hover:text-sky-300 border border-sky-700/30'
                 }`}
             >
@@ -124,7 +124,7 @@ const Portfolio = () => {
             <button
               onClick={() => setFilter('branding')}
               className={`px-6 py-3 rounded-lg transition-colors ${filter === 'branding'
-                  ? 'bg-cyan-600 text-cyan-500 shadow-lg shadow-cyan-600/30'
+                  ? 'bg-sky-600 text-sky-500 shadow-lg shadow-sky-600/30'
                   : 'bg-white/5 text-sky-500 hover:bg-sky-500 hover:text-sky-300 border border-sky-700/30'
                 }`}
             >
@@ -148,7 +148,7 @@ const Portfolio = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {filteredProjects.map(project => (
             <div key={project.id} className="group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl hover:shadow-sky-500/10 transition-all duration-300 border border-sky-800/30 hover:transform hover:scale-105">
-              <div className="h-48 bg-gradient-to-br from-sky-600 to-indigo-600 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-sky-600 to-sky-600 flex items-center justify-center">
                 <span className="text-4xl">
                   {project.category === 'web' && '🌐'}
                   {project.category === 'mobile' && '📱'}
@@ -204,7 +204,7 @@ const Portfolio = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-indigo-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">JS</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-sky-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">JS</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">John Smith</h4>
                 <p className="text-sky-300 text-sm">CEO, Tech Solutions</p>
@@ -218,13 +218,13 @@ const Portfolio = () => {
           </div>
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">SJ</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-purple-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">SJ</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">Sarah Johnson</h4>
                 <p className="text-sky-300 text-sm">Marketing Director, Retail Brand</p>
               </div>
             </div>
-            <div className="text-3xl text-indigo-400 mb-4">"</div>
+            <div className="text-3xl text-sky-400 mb-4">"</div>
             <p className="text-sky-200 italic mb-4">The WhatsApp messaging solution has revolutionized how we communicate with customers. Response rates are up by 80%.</p>
             <div className="flex text-yellow-400">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -232,13 +232,13 @@ const Portfolio = () => {
           </div>
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-cyan-600 to-teal-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">MC</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-teal-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">MC</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">Michael Chen</h4>
                 <p className="text-sky-300 text-sm">Founder, Startup Inc.</p>
               </div>
             </div>
-            <div className="text-3xl text-cyan-400 mb-4">"</div>
+            <div className="text-3xl text-sky-400 mb-4">"</div>
             <p className="text-sky-200 italic mb-4">From concept to launch, the mobile app development process was smooth and professional. Highly recommended!</p>
             <div className="flex text-yellow-400">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -248,7 +248,7 @@ const Portfolio = () => {
       </section>
 
       {/* Enhanced Call-to-Action Section */}
-      <section className="bg-gradient-to-b from-sky-950 to-indigo-950 py-20 border-y border-sky-800/30">
+      <section className="bg-gradient-to-b from-sky-950 to-sky-950 py-20 border-y border-sky-800/30">
         <div className="w-full mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
           <p className="text-xl text-sky-200 mb-8 max-w-3xl mx-auto">
@@ -283,14 +283,14 @@ const Portfolio = () => {
               <p className="text-sky-200">Kigali, Rwanda<br />Kicukiro, Gikondo KST 344 St</p>
             </div>
             <div>
-              <div className="bg-indigo-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-indigo-400/30">
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-400/30">
                 <span className="text-2xl text-white">📞</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
               <p className="text-sky-200">+250 78528 3918</p>
             </div>
             <div>
-              <div className="bg-cyan-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-cyan-400/30">
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-400/30">
                 <span className="text-2xl text-white">✉️</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email</h3>

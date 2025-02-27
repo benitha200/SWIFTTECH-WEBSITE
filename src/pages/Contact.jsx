@@ -60,7 +60,7 @@ const Contact = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-indigo-950">
+    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-sky-950">
       {/* Header - Fixed for better navigation */}
       <NavBar/>
       
@@ -280,7 +280,7 @@ const Contact = () => {
       </section>
       
       {/* Enhanced Call-to-Action Section */}
-      <section className="w-full bg-gradient-to-b from-sky-950 to-indigo-950 py-20 border-y border-sky-800/30">
+      <section className="w-full bg-gradient-to-b from-sky-950 to-sky-950 py-20 border-y border-sky-800/30">
         <div className="w-full px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
           <p className="text-xl text-sky-200 mb-8 max-w-3xl mx-auto">

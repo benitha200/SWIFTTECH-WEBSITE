@@ -19,7 +19,7 @@ const Services = () => {
         "API integration"
       ],
       icon: "🌐",
-      color: "from-sky-600 to-indigo-600",
+      color: "from-sky-600 to-sky-600",
       linkTo: "/services/web"
     },
     {
@@ -33,7 +33,7 @@ const Services = () => {
         "Design systems"
       ],
       icon: "🎨",
-      color: "from-indigo-600 to-purple-600",
+      color: "from-sky-600 to-purple-600",
       linkTo: "/services/ui-design"
     },
     {
@@ -75,7 +75,7 @@ const Services = () => {
         "Ongoing maintenance"
       ],
       icon: "📱",
-      color: "from-cyan-600 to-blue-600",
+      color: "from-sky-600 to-sky-600",
       linkTo: "/services/mobile"
     },
     {
@@ -104,7 +104,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-indigo-950">
+    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-sky-950">
       {/* Header - Fixed for better navigation */}
       <NavBar/>
 
@@ -159,12 +159,12 @@ const Services = () => {
               <p className="text-sky-200">We learn about your business goals and requirements</p>
             </div>
             <div className="text-center">
-              <div className="bg-indigo-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold text-white border border-indigo-400/30">2</div>
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold text-white border border-sky-400/30">2</div>
               <h3 className="text-xl font-semibold text-white mb-2">Planning</h3>
               <p className="text-sky-200">We create a detailed roadmap for your project</p>
             </div>
             <div className="text-center">
-              <div className="bg-cyan-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold text-white border border-cyan-400/30">3</div>
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold text-white border border-sky-400/30">3</div>
               <h3 className="text-xl font-semibold text-white mb-2">Development</h3>
               <p className="text-sky-200">Our experts build your solution with quality code</p>
             </div>
@@ -183,7 +183,7 @@ const Services = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-indigo-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">JS</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-sky-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">JS</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">John Smith</h4>
                 <p className="text-sky-300 text-sm">CEO, Tech Solutions</p>
@@ -197,13 +197,13 @@ const Services = () => {
           </div>
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">SJ</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-purple-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">SJ</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">Sarah Johnson</h4>
                 <p className="text-sky-300 text-sm">Marketing Director, Retail Brand</p>
               </div>
             </div>
-            <div className="text-3xl text-indigo-400 mb-4">"</div>
+            <div className="text-3xl text-sky-400 mb-4">"</div>
             <p className="text-sky-200 italic mb-4">The WhatsApp messaging solution has revolutionized how we communicate with customers. Response rates are up by 80%.</p>
             <div className="flex text-yellow-400">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -211,13 +211,13 @@ const Services = () => {
           </div>
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-cyan-600 to-teal-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">MC</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-teal-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">MC</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">Michael Chen</h4>
                 <p className="text-sky-300 text-sm">Founder, Startup Inc.</p>
               </div>
             </div>
-            <div className="text-3xl text-cyan-400 mb-4">"</div>
+            <div className="text-3xl text-sky-400 mb-4">"</div>
             <p className="text-sky-200 italic mb-4">From concept to launch, the mobile app development process was smooth and professional. Highly recommended!</p>
             <div className="flex text-yellow-400">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -252,7 +252,7 @@ const Services = () => {
       </section>
 
       {/* Enhanced Call-to-Action Section */}
-      <section className="bg-gradient-to-b from-sky-950 to-indigo-950 py-20 border-y border-sky-800/30">
+      <section className="bg-gradient-to-b from-sky-950 to-sky-950 py-20 border-y border-sky-800/30">
         <div className="w-full mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
           <p className="text-xl text-sky-200 mb-8 max-w-3xl mx-auto">
@@ -287,14 +287,14 @@ const Services = () => {
               <p className="text-sky-200">Kigali, Rwanda<br />Kicukiro, Gikondo KST 344 St</p>
             </div>
             <div>
-              <div className="bg-indigo-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-indigo-400/30">
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-400/30">
                 <span className="text-2xl text-white">📞</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
               <p className="text-sky-200">+250 78528 3918</p>
             </div>
             <div>
-              <div className="bg-cyan-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-cyan-400/30">
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-400/30">
                 <span className="text-2xl text-white">✉️</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email</h3>

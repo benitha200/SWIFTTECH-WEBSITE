@@ -16,7 +16,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-indigo-950">
+    <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 to-sky-950">
       {/* Header - Fixed for better navigation */}
       <NavBar/>
 
@@ -103,15 +103,15 @@ const About = () => {
             <p className="text-sky-200">We're always exploring new technologies and approaches to stay ahead of the curve. Our team constantly researches emerging trends to bring cutting-edge solutions to our clients.</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-sky-800/30">
-            <div className="bg-indigo-700/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 border border-indigo-400/30">
-              <span className="text-2xl text-indigo-400">⭐</span>
+            <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 border border-sky-400/30">
+              <span className="text-2xl text-sky-400">⭐</span>
             </div>
             <h3 className="text-xl font-semibold text-white mb-4">Quality</h3>
             <p className="text-sky-200">We're committed to excellence in everything we do, from design to development. Quality isn't just a goal but a fundamental part of our work process and company culture.</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-sky-800/30">
-            <div className="bg-cyan-700/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 border border-cyan-400/30">
-              <span className="text-2xl text-cyan-400">🤝</span>
+            <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 border border-sky-400/30">
+              <span className="text-2xl text-sky-400">🤝</span>
             </div>
             <h3 className="text-xl font-semibold text-white mb-4">Collaboration</h3>
             <p className="text-sky-200">We work closely with our clients to ensure their vision is realized. Our collaborative approach ensures that projects align perfectly with business goals and exceed expectations.</p>
@@ -150,7 +150,7 @@ const About = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-indigo-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">RW</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-sky-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">RW</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">Robert Williams</h4>
                 <p className="text-sky-300 text-sm">CEO, Innovation Labs</p>
@@ -164,13 +164,13 @@ const About = () => {
           </div>
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">LT</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-purple-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">LT</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">Lisa Thompson</h4>
                 <p className="text-sky-300 text-sm">Marketing Director, Global Retail</p>
               </div>
             </div>
-            <div className="text-3xl text-indigo-400 mb-4">"</div>
+            <div className="text-3xl text-sky-400 mb-4">"</div>
             <p className="text-sky-200 italic mb-4">The team at SwiftTech truly understood our vision and translated it into a stunning website that exceeded our expectations.</p>
             <div className="flex text-yellow-400">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -178,13 +178,13 @@ const About = () => {
           </div>
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-sky-800/30">
             <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-cyan-600 to-teal-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">DC</div>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-600 to-teal-600 rounded-full mr-4 flex items-center justify-center text-white font-bold text-xl">DC</div>
               <div>
                 <h4 className="font-semibold text-white text-lg">David Chen</h4>
                 <p className="text-sky-300 text-sm">Founder, Tech Startup</p>
               </div>
             </div>
-            <div className="text-3xl text-cyan-400 mb-4">"</div>
+            <div className="text-3xl text-sky-400 mb-4">"</div>
             <p className="text-sky-200 italic mb-4">From concept to execution, SwiftTech delivered a seamless experience. Their expertise and professionalism made all the difference.</p>
             <div className="flex text-yellow-400">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -194,7 +194,7 @@ const About = () => {
       </section>
 
       {/* Enhanced Call-to-Action Section */}
-      <section className="bg-gradient-to-b from-sky-950 to-indigo-950 py-20 border-y border-sky-800/30">
+      <section className="bg-gradient-to-b from-sky-950 to-sky-950 py-20 border-y border-sky-800/30">
         <div className="w-full mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Work With Us?</h2>
           <p className="text-xl text-sky-200 mb-8 max-w-3xl mx-auto">
@@ -229,14 +229,14 @@ const About = () => {
               <p className="text-sky-200">Kigali, Rwanda<br />Kicukiro, Gikondo KST 344 St</p>
             </div>
             <div>
-              <div className="bg-indigo-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-indigo-400/30">
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-400/30">
                 <span className="text-2xl text-white">📞</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
               <p className="text-sky-200">+250 78528 3918</p>
             </div>
             <div>
-              <div className="bg-cyan-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-cyan-400/30">
+              <div className="bg-sky-700/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-400/30">
                 <span className="text-2xl text-white">✉️</span>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
