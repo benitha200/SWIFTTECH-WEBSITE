@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import image from './../assets/1.jpg'
-import me from './../assets/3.jpg';
 import NavBar from '../components/Navbar';
 
 const About = () => {
