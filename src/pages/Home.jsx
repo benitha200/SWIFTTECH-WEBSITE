@@ -69,7 +69,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay" style={{ backgroundImage: `url(${hero})` }}></div>
         
         {/* Content with improved typography and animations */}
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-1">
           <span className="inline-block px-4 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-sm font-medium mb-6">Premium Web Development Services</span>
           
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
@@ -258,19 +258,19 @@ const Home = () => {
               <div className="bg-sky-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-sky-600/30">1</div>
               <h3 className="text-2xl font-semibold text-white mb-3">Discovery</h3>
               <p className="text-sky-200">We learn about your business goals and requirements</p>
-              <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-600 to-transparent -z-10"></div>
+              <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-600 to-transparent -z-1"></div>
             </div>
             <div className="text-center relative">
               <div className="bg-sky-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-sky-600/30">2</div>
               <h3 className="text-2xl font-semibold text-white mb-3">Planning</h3>
               <p className="text-sky-200">We create a detailed roadmap for your project</p>
-              <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-600 to-transparent -z-10"></div>
+              <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-600 to-transparent -z-1"></div>
             </div>
             <div className="text-center relative">
               <div className="bg-sky-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-sky-600/30">3</div>
               <h3 className="text-2xl font-semibold text-white mb-3">Development</h3>
               <p className="text-sky-200">Our experts build your solution with quality code</p>
-              <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-600 to-transparent -z-10"></div>
+              <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-600 to-transparent -z-1"></div>
             </div>
             <div className="text-center">
               <div className="bg-teal-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-teal-600/30">4</div>
@@ -422,7 +422,7 @@ const Home = () => {
       <section className="bg-gradient-to-br from-sky-950 to-sky-950 py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-sky-600/10 to-sky-600/10"></div>
         <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center opacity-5"></div>
-        <div className="w-full mx-auto px-4 text-center relative z-10">
+        <div className="w-full mx-auto px-4 text-center relative z-1">
           <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">Ready to Elevate Your Business?</h2>
           <p className="text-xl text-sky-200 mb-10 max-w-3xl mx-auto">
             Let's work together to create something extraordinary. Our team is ready to bring your vision to life with cutting-edge technology and expert design.
