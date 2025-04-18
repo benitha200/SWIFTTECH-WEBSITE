@@ -6,7 +6,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/SWIFTTECH-WEBSITE/">
       <App />
     </Router>
   </React.StrictMode>

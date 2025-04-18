@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/swifttech-website/',
+  base: '/SWIFTTECH-WEBSITE/',
   plugins: [react(),
     tailwindcss(),
   ],
