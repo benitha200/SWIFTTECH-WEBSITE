@@ -74,7 +74,7 @@ const Home = () => {
           
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
             Transforming Ideas into <br />
-            <span className="bg-gradient-to-r from-sky-400 to-sky-500 text-transparent bg-clip-text">Digital Reality!</span>
+            <span className="bg-gradient-to-r from-sky-400 to-sky-500 text-transparent bg-clip-text">Digital Reality</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-sky-100 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
