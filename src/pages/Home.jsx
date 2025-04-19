@@ -52,7 +52,54 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-b w-full from-sky-950 via-sky-900 to-sky-950">
       {/* Header - Fixed for better navigation */}
       <NavBar />
-      
+
+      {/* Add this near the top of your return statement */}
+      <script type="application/ld+json">
+        {`
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SwiffTech",
+    "url": "https://benitha200.github.io/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://benitha200.github.io/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+`}
+      </script>
+
+      <script type="application/ld+json">
+        {`
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SwiffTech",
+    "url": "https://benitha200.github.io/",
+    "logo": "https://benitha200.github.io/static/media/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+250 78528 3918",
+      "contactType": "customer service",
+      "email": "info@swifttech.co.rw"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kicukiro, Gikondo KST 344 St",
+      "addressLocality": "Kigali",
+      "addressCountry": "Rwanda"
+    },
+    "sameAs": [
+      "https://facebook.com/swifftech",
+      "https://twitter.com/swifftech",
+      "https://instagram.com/swifftech",
+      "https://linkedin.com/company/swifftech"
+    ]
+  }
+`}
+      </script>
+
       {/* Hero Section - Full Screen with Dynamic Gradient Overlay */}
       <section className="h-screen w-full flex items-center justify-center relative overflow-hidden pt-16">
         {/* Animated floating particles */}
@@ -61,26 +108,26 @@ const Home = () => {
           <div className="absolute h-24 w-24 rounded-full bg-sky-500/20 blur-xl top-1/3 right-1/3 animate-pulse"></div>
           <div className="absolute h-20 w-20 rounded-full bg-sky-300/20 blur-xl bottom-1/4 right-1/4 animate-pulse"></div>
         </div>
-        
+
         {/* Enhanced gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/80 to-sky-950/90"></div>
-        
+
         {/* Background image with improved blend */}
         <div className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay" style={{ backgroundImage: `url(${hero})` }}></div>
-        
+
         {/* Content with improved typography and animations */}
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-1">
-          <span className="inline-block px-4 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-sm font-medium mb-6">Premium Web Development Services</span>
-          
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
-            Transforming Ideas into <br />
-            <span className="bg-gradient-to-r from-sky-400 to-sky-500 text-transparent bg-clip-text">Digital Reality</span>
-          </h1>
-          
+        <span className="inline-block px-4 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-sm font-medium mb-6">Premium Web Development Services</span>
+        
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">
+          SwiffTech: Transforming Ideas into <br />
+          <span className="bg-gradient-to-r from-sky-400 to-sky-500 text-transparent bg-clip-text">Digital Reality</span>
+        </h1>
+
           <p className="text-xl sm:text-2xl text-sky-100 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
             We specialize in creating stunning web and mobile applications that drive results and delight users. Our expert team brings your vision to life with cutting-edge technology.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
             <Link
               to="/services"
@@ -101,7 +148,7 @@ const Home = () => {
               </span>
             </Link>
           </div>
-          
+
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center items-center gap-8 text-sky-200 text-sm">
             <div className="flex items-center">
@@ -116,7 +163,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Statistics Section - With Enhanced Card Style */}
       <section className="relative bg-sky-900/40 py-24 backdrop-blur-md border-y border-sky-700/40">
         {/* Section heading */}
@@ -124,7 +171,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-white mb-4">Our Impact by the Numbers</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-blue-500 mx-auto rounded-full"></div>
         </div>
-        
+
         <div className="w-full max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="group bg-gradient-to-b from-sky-800/30 to-sky-900/30 p-8 rounded-xl shadow-lg border border-sky-600/20 transition-all hover:transform hover:scale-105 hover:shadow-sky-500/20">
@@ -134,7 +181,7 @@ const Home = () => {
               <p className="text-5xl font-bold bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent mb-2">100+</p>
               <p className="text-sky-100 font-medium">Projects Completed</p>
             </div>
-            
+
             <div className="group bg-gradient-to-b from-sky-800/30 to-sky-900/30 p-8 rounded-xl shadow-lg border border-sky-600/20 transition-all hover:transform hover:scale-105 hover:shadow-sky-500/20">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sky-500/20 text-sky-400 mb-4 mx-auto">
                 <UsersIcon />
@@ -142,7 +189,7 @@ const Home = () => {
               <p className="text-5xl font-bold bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent mb-2">50+</p>
               <p className="text-sky-100 font-medium">Happy Clients</p>
             </div>
-            
+
             <div className="group bg-gradient-to-b from-sky-800/30 to-sky-900/30 p-8 rounded-xl shadow-lg border border-sky-600/20 transition-all hover:transform hover:scale-105 hover:shadow-sky-500/20">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sky-500/20 text-sky-400 mb-4 mx-auto">
                 <AwardIcon />
@@ -150,7 +197,7 @@ const Home = () => {
               <p className="text-5xl font-bold bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent mb-2">5+</p>
               <p className="text-sky-100 font-medium">Years Experience</p>
             </div>
-            
+
             <div className="group bg-gradient-to-b from-sky-800/30 to-sky-900/30 p-8 rounded-xl shadow-lg border border-sky-600/20 transition-all hover:transform hover:scale-105 hover:shadow-sky-500/20">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sky-500/20 text-sky-400 mb-4 mx-auto">
                 <ClockIcon />
@@ -248,8 +295,8 @@ const Home = () => {
         </div>
       </section>
 
-  {/* How We Work Section - With Modern Process Steps */}
-  <section className="bg-gradient-to-b from-sky-950 to-sky-950 py-24 border-y border-sky-800/30">
+      {/* How We Work Section - With Modern Process Steps */}
+      <section className="bg-gradient-to-b from-sky-950 to-sky-950 py-24 border-y border-sky-800/30">
         <div className="w-full mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-4">Our Process</h2>
           <p className="text-sky-200 text-center max-w-3xl mx-auto mb-16">A proven methodology for delivering exceptional results</p>

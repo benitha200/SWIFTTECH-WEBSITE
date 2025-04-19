@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benitha200.github.io/sitemap.xml
