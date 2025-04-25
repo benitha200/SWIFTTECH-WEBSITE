@@ -541,6 +541,7 @@ const Home = () => {
                 <li><Link to="/services/mobile" className="text-gray-400 hover:text-white">Mobile Apps</Link></li>
                 <li><Link to="/services/whatsapp" className="text-gray-400 hover:text-white">WhatsApp Messaging</Link></li>
                 <li><Link to="/services/ui-design" className="text-gray-400 hover:text-white">UI/UX Design</Link></li>
+                <li><Link to="/services/ui-design" className="text-gray-400 hover:text-white">Digital Marketing</Link></li>
               </ul>
             </div>
             <div>
