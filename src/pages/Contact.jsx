@@ -179,10 +179,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-white mb-2">Phone</h4>
-                    <p className="text-sky-200">Main: +250 785 283 918</p>
-                    <p className="text-sky-200 mt-1">
+                    <p className="text-sky-200">
                       <span className="font-semibold text-white">Sam Ngoga</span> (Managing Director)<br />
-                      Direct: +250 788 254 137
+                      +250 788 254 137
                     </p>
                   </div>
                 </div>

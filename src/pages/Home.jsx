@@ -243,12 +243,11 @@ const Home = () => {
             <h4 className="font-bold mb-6 text-sm tracking-widest uppercase text-gray-500">Contact</h4>
             <p className="text-gray-300 mb-2">Kigali, Rwanda</p>
             <p className="text-gray-300 mb-4">info@swifttech.co.rw</p>
-            <div className="space-y-2">
-              <p className="text-brand-secondary font-bold">+250 785 283 918</p>
-              <div className="pt-2 border-t border-white/5">
-                <p className="text-xs text-gray-500 uppercase font-bold tracking-tighter">Managing Director</p>
-                <p className="text-sm font-bold text-white">Sam Ngoga</p>
-                <p className="text-brand-secondary font-medium text-sm">+250 788 254 137</p>
+            <div className="space-y-4">
+              <div className="pt-2">
+                <p className="text-xs text-gray-500 uppercase font-bold tracking-widest mb-1">Managing Director</p>
+                <p className="text-lg font-bold text-white">Sam Ngoga</p>
+                <p className="text-brand-secondary font-bold">+250 788 254 137</p>
               </div>
             </div>
           </div>
