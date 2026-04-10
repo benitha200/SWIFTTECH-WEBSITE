@@ -39,7 +39,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-dark text-white pt-24">
+    <div className="min-h-screen bg-transparent text-white pt-24">
       <NavBar />
 
       {/* Header Section */}
@@ -57,7 +57,7 @@ const Services = () => {
         {services.map((service, index) => (
           <section 
             key={service.id} 
-            className={`py-24 px-6 overflow-hidden ${index % 2 === 1 ? 'bg-black/20' : ''}`}
+            className={`py-24 px-6 overflow-hidden ${index % 2 === 1 ? 'bg-[#020617]/40 backdrop-blur-sm' : ''}`}
           >
             <div className={`max-w-7xl mx-auto flex flex-col md:items-center gap-16 ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
               {/* Content */}

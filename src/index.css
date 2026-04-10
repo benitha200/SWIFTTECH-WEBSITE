@@ -9,6 +9,10 @@
   --color-brand-secondary: #38bdf8;
   --color-brand-dark: #082f49;
   --color-brand-accent: #f59e0b;
+
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-drift: drift 15s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Custom Base Styles */

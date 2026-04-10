@@ -65,7 +65,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-brand-dark relative">
+      <section className="py-24 bg-transparent relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Us?</h2>
@@ -110,7 +110,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-black/20">
+      <section className="py-24 bg-[#020617]/40 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
@@ -163,7 +163,7 @@ const Home = () => {
       </section>
 
       {/* Realistic Portfolio Section */}
-      <section className="py-24">
+      <section className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Work</h2>

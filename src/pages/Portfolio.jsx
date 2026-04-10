@@ -71,7 +71,7 @@ const Portfolio = () => {
     : projects.filter(p => p.category === filter);
 
   return (
-    <div className="min-h-screen bg-brand-dark text-white pt-24">
+    <div className="min-h-screen bg-transparent text-white pt-24">
       <NavBar />
 
       {/* Hero Section */}
@@ -153,7 +153,7 @@ const Portfolio = () => {
       </section>
 
       {/* Testimonials (Reprinted from Home for consistency) */}
-      <section className="py-24 bg-black/20">
+      <section className="py-24 bg-[#020617]/40 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 italic text-gray-300">
             "SwiftTech didn't just build our app; they helped us redefine our digital strategy."

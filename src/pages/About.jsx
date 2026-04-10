@@ -6,7 +6,7 @@ import heroImg from '../assets/hero.png';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-brand-dark text-white pt-24">
+    <div className="min-h-screen bg-transparent text-white pt-24">
       <NavBar />
 
       {/* Hero Section */}
@@ -56,7 +56,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-black/20">
+      <section className="py-24 bg-[#020617]/40 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
