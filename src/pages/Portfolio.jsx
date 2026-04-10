@@ -115,13 +115,13 @@ const Portfolio = () => {
                 className="group glass-card rounded-[2.5rem] overflow-hidden animate-fade-in-up flex flex-col h-full"
                 style={{ animationDelay: `${0.1 * (index + 3)}s` }}
               >
-                <div className="aspect-video overflow-hidden relative">
+                <div className="aspect-video overflow-hidden relative animate-float" style={{ animationDelay: `${index * 0.25}s` }}>
                   <img 
                     src={project.img} 
                     alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-70"></div>
                 </div>
                 <div className="p-10 flex flex-col flex-1">
                   <div className="mb-6">

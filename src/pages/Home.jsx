@@ -30,7 +30,7 @@ const Home = () => {
             #1 Web Development Agency in Rwanda
           </div>
           
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 tracking-tight leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-5xl md:text-8xl font-bold mb-8 tracking-tight leading-tight animate-fade-in-up animate-float" style={{ animationDelay: '0.1s' }}>
             We <span className="text-gradient">Build Websites</span> <br />
             that Scale Your Vision
           </h1>
@@ -42,18 +42,19 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <Link
               to="/contact"
-              className="bg-brand-primary hover:bg-brand-secondary text-white px-10 py-5 rounded-full text-lg font-bold transition-all shadow-xl hover:shadow-brand-primary/30 transform hover:-translate-y-1"
+              className="bg-brand-primary hover:bg-brand-secondary text-white px-10 py-5 rounded-full text-lg font-bold transition-all shadow-xl hover:shadow-brand-primary/40 transform hover:-translate-y-2 active:scale-95 animate-pulse-glow"
             >
               Start a Project
             </Link>
             <Link
               to="/portfolio"
-              className="glass text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white/10 transition-all border border-white/20"
+              className="glass text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white/10 transition-all border border-white/20 backdrop-blur-xl hover:border-brand-primary/50"
             >
               View Our Work
             </Link>
           </div>
         </div>
+
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
@@ -94,7 +95,11 @@ const Home = () => {
                 icon: "⚡"
               }
             ].map((item, index) => (
-              <div key={index} className="glass-card p-8 rounded-2xl">
+              <div 
+                key={index} 
+                className="glass-card p-8 rounded-2xl animate-float h-full"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
                 <div className="text-4xl mb-6">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.desc}</p>
@@ -135,15 +140,19 @@ const Home = () => {
                 desc: "Scale your customer service with powerful, automated messaging workflows." 
               }
             ].map((service, index) => (
-              <div key={index} className="group glass-card rounded-3xl overflow-hidden">
+              <div 
+                key={index} 
+                className="group glass-card rounded-3xl overflow-hidden hover:z-10"
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
                 <div className="h-64 overflow-hidden relative">
                   <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60"></div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-secondary transition-colors">{service.title}</h3>
-                  <p className="text-gray-400 mb-6">{service.desc}</p>
-                  <Link to="/services" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-brand-primary hover:text-white transition-colors">
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-primary transition-colors">{service.title}</h3>
+                  <p className="text-gray-400 mb-6 font-light">{service.desc}</p>
+                  <Link to="/services" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-brand-secondary hover:text-white transition-colors">
                     LEARN MORE <span>→</span>
                   </Link>
                 </div>

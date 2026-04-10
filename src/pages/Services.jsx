@@ -90,13 +90,13 @@ const Services = () => {
               {/* Image */}
               <div className="flex-1 relative group">
                 <div className="absolute -inset-4 bg-brand-primary/20 rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative glass-card rounded-[2rem] overflow-hidden aspect-[4/3]">
+                <div className="relative glass-card rounded-[2rem] overflow-hidden aspect-[4/3] animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
                   <img 
                     src={service.img} 
                     alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent"></div>
                 </div>
               </div>
             </div>
