@@ -1,36 +1,93 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
-
-
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-}
- */
-
- /* Import Inter font - a clean, minimalist and highly legible font designed for screens */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Import Modern Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Import Tailwind */
 @import "tailwindcss";
 
-/* Improved base styles for better text rendering */
+@theme {
+  --color-brand-primary: #0ea5e9;
+  --color-brand-secondary: #38bdf8;
+  --color-brand-dark: #082f49;
+  --color-brand-accent: #f59e0b;
+}
+
+/* Custom Base Styles */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-brand-dark);
+  color: #f8fafc;
+  line-height: 1.6;
 }
 
-/* Optional: Smooth scrolling for modern browsers */
-@media screen and (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated Underline */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-brand-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
