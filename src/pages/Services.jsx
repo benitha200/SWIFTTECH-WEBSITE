@@ -1,131 +1,181 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/Navbar';
+import Footer from '../components/Footer';
+import PageHero from '../components/PageHero';
+import CTASection from '../components/CTASection';
+import ServiceShowcase from '../components/ServiceShowcase';
+import GalleryStrip from '../components/GalleryStrip';
+import ImageFrame from '../components/ImageFrame';
+import StatsBar from '../components/StatsBar';
+import ProcessSteps from '../components/ProcessSteps';
+import FAQ from '../components/FAQ';
+import OdooPricingCallout from '../components/OdooPricingCallout';
+import Section from '../components/Section';
+import { ArrowRightIcon, CheckIcon } from '../components/Icons';
+import {
+  odooService,
+  otherServices,
+  deliveryProcess,
+  engagementModels,
+  faqs,
+  trustStats,
+  microcopy,
+} from '../data/content';
+import { images, serviceImages, projectStrip } from '../data/images';
+import SEOHead from '../components/SEOHead';
+import { BreadcrumbSchema, ServiceSchema } from '../components/StructuredData';
+import { pageSEO } from '../data/seo';
 
-// Images (Relative Imports)
-import webDevImg from '../assets/web_dev.png';
-import mobileAppImg from '../assets/mobile_app.png';
-import whatsappImg from '../assets/whatsapp.png';
+const serviceList = [
+  { name: odooService.title, description: odooService.description },
+  ...otherServices.map((s) => ({ name: s.title, description: s.description })),
+];
 
-const Services = () => {
-  const services = [
-    {
-      id: "web-dev",
-      title: "Web Development",
-      subtitle: "Scalable. Secure. Stunning.",
-      desc: "We build websites that don't just look great - they perform. From complex enterprise systems to elegant portfolio sites, our web solutions are designed to scale with your business and convert your visitors into loyal customers.",
-      features: ["React & Next.js Expertise", "E-commerce Integration", "API Development", "Performance Optimization"],
-      img: webDevImg,
-      color: "brand-primary"
-    },
-    {
-      id: "mobile-apps",
-      title: "Mobile Applications",
-      subtitle: "Native Experiences. Global Reach.",
-      desc: "Our mobile development team creates high-performance iOS and Android applications that provide seamless user experiences. We handle everything from initial design to App Store submission.",
-      features: ["Native iOS & Android", "Cross-platform (React Native)", "Offline Functionality", "Push Notifications"],
-      img: mobileAppImg,
-      color: "brand-secondary"
-    },
-    {
-      id: "whatsapp",
-      title: "WhatsApp Automation",
-      subtitle: "Connect Instantly. Scale Effortlessly.",
-      desc: "Transform your customer engagement with our intelligent WhatsApp automation solutions. We help you build workflows that handle inquiries, bookings, and broadcasts 24/7.",
-      features: ["Bulk Messaging API", "Custom Chatbots", "Payment Integration", "Analytics Dashboard"],
-      img: whatsappImg,
-      color: "brand-accent"
-    }
-  ];
+const Services = () => (
+  <div className="min-h-screen page-main">
+    <SEOHead {...pageSEO['/services']} path="/services" />
+    <BreadcrumbSchema
+      items={[
+        { name: 'Home', path: '/' },
+        { name: 'Services', path: '/services' },
+      ]}
+    />
+    <ServiceSchema services={serviceList} />
+    <NavBar />
 
-  return (
-    <div className="min-h-screen bg-transparent text-white pt-24">
-      <NavBar />
+    <PageHero
+      badge="Our Services"
+      title="End-to-end IT services"
+      highlight="built around Odoo"
+      description={microcopy.servicesHero}
+      image={images.hero}
+    >
+      <p className="mt-6 readable-muted max-w-lg">
+        Independent consultancy—experienced with Odoo; not affiliated with Odoo S.A.
+      </p>
+    </PageHero>
 
-      {/* Header Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in-up">Our Services</h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            We combine strategic thinking with technical excellence to deliver digital products that move the needle.
-          </p>
-        </div>
-      </section>
+    <StatsBar stats={trustStats} />
 
-      {/* Services List */}
-      <div className="pb-24">
-        {services.map((service, index) => (
-          <section 
-            key={service.id} 
-            className={`py-24 px-6 overflow-hidden ${index % 2 === 1 ? 'bg-[#020617]/40 backdrop-blur-sm' : ''}`}
-          >
-            <div className={`max-w-7xl mx-auto flex flex-col md:items-center gap-16 ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-              {/* Content */}
-              <div className="flex-1 space-y-8 animate-fade-in-up">
-                <div className="space-y-4">
-                  <span className="text-brand-secondary font-bold tracking-widest uppercase text-sm">{service.subtitle}</span>
-                  <h2 className="text-4xl md:text-5xl font-bold">{service.title}</h2>
-                </div>
-                <p className="text-xl text-gray-400 leading-relaxed">
-                  {service.desc}
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {service.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-brand-primary"></div>
-                      <span className="text-gray-300 font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="pt-6">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center bg-brand-primary hover:bg-brand-secondary text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-brand-primary/20"
-                  >
-                    Discuss this service
-                  </Link>
-                </div>
-              </div>
+    <Section
+      variant="light"
+      className="section-y"
+      decor={{ placement: 'top-right', size: 'md', chips: ['Odoo', 'ERP', 'Cloud'], hiddenBelow: true }}
+    >
+      <div className="odoo-feature-grid">
+        <ImageFrame
+          src={serviceImages.odoo}
+          alt="Odoo ERP dashboards and workflows"
+          aspect="aspect-[4/3] lg:aspect-auto lg:min-h-[480px]"
+          label="Flagship · Odoo ERP"
+        />
+        <div className="lg:py-4">
+          <p className="section-label mb-2">Flagship service</p>
+          <h2 className="text-3xl font-bold text-slate-100 mb-4">{odooService.title}</h2>
+          <p className="readable mb-4">{odooService.description}</p>
+          <p className="readable mb-8">{odooService.longDescription}</p>
 
-              {/* Image */}
-              <div className="flex-1 relative group">
-                <div className="absolute -inset-4 bg-brand-primary/20 rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative glass-card rounded-[2rem] overflow-hidden aspect-[4/3] animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
-                  <img 
-                    src={service.img} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent"></div>
-                </div>
-              </div>
-            </div>
-          </section>
-        ))}
-      </div>
+          <h3 className="font-bold text-slate-100 mb-3">What you gain</h3>
+          <ul className="grid sm:grid-cols-3 gap-4 mb-8">
+            {odooService.outcomes.map((o) => (
+              <li key={o.label} className="p-4 rounded-xl glass-card">
+                <p className="text-2xl font-bold text-brand-primary">{o.stat}</p>
+                <p className="text-xs text-slate-400 mt-1">{o.label}</p>
+              </li>
+            ))}
+          </ul>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-brand-primary/5">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
-          <h2 className="text-4xl md:text-6xl font-bold">Have a specific need?</h2>
-          <p className="text-2xl text-gray-400 font-light">
-            We love tackling unique challenges. If you have a custom project in mind, let's talk about how we can build it together.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-white text-brand-dark px-12 py-6 rounded-full text-xl font-bold hover:bg-brand-secondary hover:text-white transition-all shadow-2xl"
-          >
-            Schedule a Strategy Call
+          <ul className="space-y-3 mb-10">
+            {odooService.features.map((f) => (
+              <li key={f} className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckIcon className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
+                {f}
+              </li>
+            ))}
+          </ul>
+          <Link to="/contact" className="btn-primary">
+            Discuss your Odoo project <ArrowRightIcon />
           </Link>
+          <OdooPricingCallout className="mt-8" />
         </div>
-      </section>
+      </div>
+    </Section>
 
-      {/* Footer */}
-      <footer className="py-12 border-t border-white/10 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} SwiftTech. All rights reserved.</p>
-      </footer>
-    </div>
-  );
-};
+    <Section
+      variant="light"
+      className="section-y"
+      decor={{ placement: 'bottom-left', size: 'sm', chips: ['Web', 'Mobile', 'API'], hiddenBelow: true }}
+    >
+      <GalleryStrip images={projectStrip} title="Project snapshots" />
+      <div className="readable-wide mt-14 mb-10">
+        <p className="section-label mb-2">Complementary services</p>
+        <h2 className="section-title mb-4">Extend Odoo—or stand alone</h2>
+        <p className="readable">
+          Many clients start with ERP and add development, cloud, or integrations in phase two.
+          Each service connects to measurable outcomes—not technology for its own sake.
+        </p>
+      </div>
+      <ServiceShowcase items={otherServices} linkTo="/contact" />
+    </Section>
+
+    <Section
+      variant="muted"
+      className="section-y"
+      decor={{ placement: 'top-left', size: 'sm', chips: ['Fixed', 'Retainer', 'Advisory'], hiddenBelow: true }}
+    >
+      <div className="split-section split-section--reverse">
+        <div className="grid md:grid-cols-3 gap-6">
+          {engagementModels.map((m) => (
+            <div key={m.title} className="glass-card p-6">
+              <h3 className="font-bold text-slate-100 mb-2">{m.title}</h3>
+              <p className="text-sm text-brand-primary font-medium mb-3">Best for: {m.bestFor}</p>
+              <p className="text-slate-400 text-sm readable">{m.includes}</p>
+            </div>
+          ))}
+        </div>
+        <ImageFrame
+          src={images.team}
+          alt="Consulting workshop"
+          aspect="aspect-[4/3]"
+          label="Engagement models"
+          className="hidden lg:block"
+        />
+      </div>
+    </Section>
+
+    <Section variant="muted" className="section-y">
+      <div className="split-section">
+        <ImageFrame
+          src={images.integration}
+          alt="System integrations"
+          aspect="aspect-[4/3]"
+          label="Delivery methodology"
+        />
+        <div>
+          <p className="section-label mb-2">Delivery methodology</p>
+          <h2 className="section-title mb-10">How your project runs</h2>
+          <ProcessSteps steps={deliveryProcess} compact />
+        </div>
+      </div>
+    </Section>
+
+    <Section variant="light" className="section-y">
+      <h2 className="section-title text-center mb-10">Service FAQs</h2>
+      <FAQ items={faqs} />
+    </Section>
+
+    <CTASection
+      title="Get a scoped proposal—not a guess"
+      description="Share your modules, branches, and timeline. We will recommend a phased plan you can take to your board or fund internally."
+      primaryLabel="Request a quote"
+      secondaryLabel="View case studies"
+      secondaryTo="/portfolio"
+      image={images.caseStudies[1]}
+    />
+
+    <Footer />
+  </div>
+);
 
 export default Services;

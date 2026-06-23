@@ -1,74 +1,96 @@
 import React from 'react';
 
-const AmbientBackground = () => {
-  return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-      {/* Deep Background Layer */}
-      <div className="absolute inset-0 bg-[#020617]"></div>
+const AmbientBackground = () => (
+  <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none" style={{ background: '#0a0e1a' }}>
+    {/* Subtle dot grid */}
+    <svg className="absolute inset-0 w-full h-full opacity-30" aria-hidden>
+      <defs>
+        <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+          <circle cx="25" cy="25" r="0.5" fill="rgba(14, 165, 233, 0.4)" />
+        </pattern>
+        <radialGradient id="gridFade" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stopColor="white" stopOpacity="1" />
+          <stop offset="100%" stopColor="white" stopOpacity="0" />
+        </radialGradient>
+        <mask id="gridMask">
+          <rect width="100%" height="100%" fill="url(#gridFade)" />
+        </mask>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" mask="url(#gridMask)" />
+    </svg>
 
-      {/* Mesh Gradients - Improved Visibility */}
-      <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-brand-primary/20 rounded-full blur-[120px] animate-float-slow opacity-60"></div>
-      <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] bg-brand-secondary/20 rounded-full blur-[120px] animate-float-slow opacity-60" style={{ animationDelay: '-2s' }}></div>
-      <div className="absolute top-[20%] right-[10%] w-[40%] h-[40%] bg-brand-accent/10 rounded-full blur-[100px] animate-float-slow opacity-40" style={{ animationDelay: '-4s' }}></div>
+    {/* Fine line grid overlay */}
+    <svg className="absolute inset-0 w-full h-full opacity-[0.04]" aria-hidden>
+      <defs>
+        <pattern id="lineGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+          <path
+            d="M 80 0 L 0 0 0 80"
+            fill="none"
+            stroke="rgba(14, 165, 233, 1)"
+            strokeWidth="0.5"
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#lineGrid)" />
+    </svg>
 
-      {/* Floating Circles (NEW) */}
-      {[...Array(6)].map((_, i) => (
-        <div
-          key={`circle-${i}`}
-          className="absolute rounded-full border border-white/10 animate-float-slow opacity-20"
-          style={{
-            width: `${Math.random() * 150 + 100}px`,
-            height: `${Math.random() * 150 + 100}px`,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDuration: `${Math.random() * 12 + 15}s`,
-            animationDelay: `${Math.random() * -10}s`,
-            background: `radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%)`,
-          }}
-        />
-      ))}
+    {/* Neon orbs with glow */}
+    <div
+      className="absolute w-[500px] h-[500px] rounded-full ambient-blob"
+      style={{
+        top: '-10%',
+        right: '-5%',
+        background: 'radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, rgba(14, 165, 233, 0.03) 40%, transparent 70%)',
+        filter: 'blur(40px)',
+      }}
+    />
+    <div
+      className="absolute w-[400px] h-[400px] rounded-full ambient-blob"
+      style={{
+        bottom: '-5%',
+        left: '-5%',
+        background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.02) 40%, transparent 70%)',
+        filter: 'blur(40px)',
+        animationDelay: '-8s',
+      }}
+    />
+    <div
+      className="absolute w-[300px] h-[300px] rounded-full ambient-blob"
+      style={{
+        top: '40%',
+        left: '30%',
+        background: 'radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 60%)',
+        filter: 'blur(50px)',
+        animationDelay: '-4s',
+      }}
+    />
 
-      {/* Floating Squares - Improved */}
-      {[...Array(8)].map((_, i) => (
-        <div
-          key={`sq-${i}`}
-          className="bg-square animate-float-slow hidden md:block"
-          style={{
-            width: `${Math.random() * 80 + 40}px`,
-            height: `${Math.random() * 80 + 40}px`,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDuration: `${Math.random() * 10 + 10}s`,
-            animationDelay: `${Math.random() * -20}s`,
-            opacity: 0.15 + Math.random() * 0.1,
-            borderRadius: '20%',
-            transform: `rotate(${Math.random() * 45}deg)`,
-          }}
-        />
-      ))}
+    {/* Orbiting ring */}
+    <div
+      className="absolute top-[20%] right-[15%] w-72 h-72 rounded-full ambient-orbit"
+      style={{
+        border: '1px solid rgba(14, 165, 233, 0.08)',
+        boxShadow: '0 0 40px rgba(14, 165, 233, 0.03)',
+      }}
+    />
 
-      {/* Floating Dots - Multi-colored */}
-      {[...Array(25)].map((_, i) => (
-        <div
-          key={`dot-${i}`}
-          className="bg-dot animate-drift"
-          style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            width: `${Math.random() * 5 + 3}px`,
-            height: `${Math.random() * 5 + 3}px`,
-            animationDuration: `${Math.random() * 15 + 15}s`,
-            animationDelay: `${Math.random() * -30}s`,
-            opacity: 0.4 + Math.random() * 0.3,
-            backgroundColor: i % 4 === 0 ? '#38bdf8' : i % 4 === 1 ? '#0ea5e9' : i % 4 === 2 ? '#f59e0b' : 'white',
-          }}
-        />
-      ))}
+    {/* Pulsing accent point */}
+    <div
+      className="absolute bottom-[25%] left-[12%] w-40 h-40 rounded-full ambient-pulse"
+      style={{
+        background: 'radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, transparent 70%)',
+        filter: 'blur(20px)',
+      }}
+    />
 
-      {/* Glassmorphic Overlay for blending */}
-      <div className="absolute inset-0 backdrop-blur-[1px] bg-gradient-to-b from-transparent via-[#020617]/20 to-[#020617]"></div>
-    </div>
-  );
-};
+    {/* Top edge glow line */}
+    <div
+      className="absolute top-0 left-0 right-0 h-px"
+      style={{
+        background: 'linear-gradient(90deg, transparent 0%, rgba(14, 165, 233, 0.15) 50%, transparent 100%)',
+      }}
+    />
+  </div>
+);
 
 export default AmbientBackground;

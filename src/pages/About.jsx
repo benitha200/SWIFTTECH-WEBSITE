@@ -1,104 +1,153 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/Navbar';
+import Footer from '../components/Footer';
+import PageHero from '../components/PageHero';
+import CTASection from '../components/CTASection';
+import StatsBar from '../components/StatsBar';
+import ProcessSteps from '../components/ProcessSteps';
+import BentoGallery from '../components/BentoGallery';
+import ClientsSection from '../components/ClientsSection';
+import ImageFrame from '../components/ImageFrame';
+import Section from '../components/Section';
+import { aboutStats, values, companyStory, deliveryProcess, brand } from '../data/content';
+import { images, workGallery } from '../data/images';
+import SEOHead from '../components/SEOHead';
+import { BreadcrumbSchema } from '../components/StructuredData';
+import { pageSEO } from '../data/seo';
 
-import heroImg from '../assets/hero.png';
+const About = () => (
+  <div className="min-h-screen page-main">
+    <SEOHead {...pageSEO['/about']} path="/about" />
+    <BreadcrumbSchema
+      items={[
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+      ]}
+    />
+    <NavBar />
 
-const About = () => {
-  return (
-    <div className="min-h-screen bg-transparent text-white pt-24">
-      <NavBar />
+    <PageHero
+      badge="About Swittech"
+      title="We make enterprise technology"
+      highlight="work in the real world"
+      description="Independent IT consultancy and software engineers based in Kigali—experienced in Odoo ERP and serving ambitious organizations across East Africa and beyond."
+      image={images.team}
+    />
 
-      {/* Hero Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in-up">Our Story</h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            Built on innovation, driven by a passion for excellence.
-          </p>
-        </div>
-      </section>
+    <StatsBar stats={aboutStats.map((s) => ({ ...s, detail: undefined }))} />
 
-      {/* Main Content */}
-      <section className="py-12 px-6 pb-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <h2 className="text-4xl font-bold">Bridging the gap between <span className="text-gradient">Vision and Reality</span></h2>
-              <div className="space-y-6 text-xl text-gray-400 font-light leading-relaxed">
-                <p>
-                  Founded with a vision to transform the digital landscape of Rwanda and beyond, SwiftTech has grown into a premier technology partner for businesses looking to innovate.
-                </p>
-                <p>
-                  We don't just write code; we solve problems. Our team of designers and engineers works at the intersection of creativity and technology to deliver products that matter.
-                </p>
-              </div>
-              <div className="flex gap-12 pt-4">
-                <div>
-                  <div className="text-4xl font-bold text-brand-primary mb-2">100+</div>
-                  <p className="text-gray-500 uppercase tracking-widest text-xs font-bold">Projects Built</p>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-brand-primary mb-2">5+</div>
-                  <p className="text-gray-500 uppercase tracking-widest text-xs font-bold">Years Experience</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <div className="absolute -inset-4 bg-brand-primary/20 rounded-[2.5rem] blur-3xl opacity-50"></div>
-              <div className="relative glass-card rounded-[2.5rem] overflow-hidden aspect-square">
-                <img src={heroImg} alt="Our Workspace" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 to-transparent"></div>
-              </div>
-            </div>
+    <Section
+      variant="light"
+      className="section-y"
+      decor={{ placement: 'bottom-right', size: 'md', chips: ['Kigali', 'EA', 'Global'], hiddenBelow: true }}
+    >
+      <div className="split-section">
+        <div className="space-y-6">
+          <p className="readable-lead font-medium text-slate-200">{companyStory.intro}</p>
+          <div>
+            <h2 className="text-xl font-bold text-slate-100 mb-2">Our mission</h2>
+            <p className="readable">{companyStory.mission}</p>
           </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-24 bg-[#020617]/40 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
-            <div className="w-20 h-1 bg-brand-primary mx-auto rounded-full"></div>
+          <div>
+            <h2 className="text-xl font-bold text-slate-100 mb-2">How we work</h2>
+            <p className="readable">{companyStory.approach}</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Innovation", desc: "Always exploring what's next in tech.", icon: "💡" },
-              { title: "Integrity", desc: "Building trust through transparency and quality.", icon: "🛡️" },
-              { title: "Impact", desc: "Creating solutions that make a real difference.", icon: "🌍" }
-            ].map((value, index) => (
-              <div key={index} className="glass-card p-10 rounded-3xl text-center">
-                <div className="text-5xl mb-6">{value.icon}</div>
-                <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-400 text-lg leading-relaxed">{value.desc}</p>
-              </div>
-            ))}
+          <div>
+            <h2 className="text-xl font-bold text-slate-100 mb-2">Our vision</h2>
+            <p className="readable">{companyStory.vision}</p>
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold">Join our journey</h2>
-          <p className="text-xl text-gray-400">
-            Whether you want to work with us or for us, we're always looking for great people.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-brand-primary hover:bg-brand-secondary text-white px-12 py-6 rounded-full text-xl font-bold transition-all shadow-2xl"
-          >
-            Get in Touch
+          <Link to="/contact" className="btn-primary inline-flex">
+            Start a conversation
           </Link>
         </div>
-      </section>
+        <div className="space-y-4">
+          <ImageFrame src={images.hero} alt="Digital transformation" aspect="aspect-[16/10]" />
+          <ImageFrame
+            src={images.caseStudies[0]}
+            alt="Client project delivery"
+            aspect="aspect-[16/10]"
+            label="Projects that scale"
+          />
+        </div>
+      </div>
+    </Section>
 
-      <footer className="py-12 border-t border-white/10 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} SwiftTech. All rights reserved.</p>
-      </footer>
-    </div>
-  );
-};
+    <Section
+      variant="light"
+      className="section-y"
+      decor={{ placement: 'top-right', size: 'sm', chips: ['Trust', 'Delivery', 'Care'], hiddenBelow: true }}
+    >
+      <ClientsSection />
+    </Section>
+
+    <Section variant="muted" className="section-y">
+      <p className="section-label mb-2 text-center">Life at Swittech</p>
+      <h2 className="section-title text-center mb-12">People, principles, and projects</h2>
+      <BentoGallery items={workGallery} />
+    </Section>
+
+    <Section variant="light" className="section-y">
+      <p className="section-label mb-2 text-center">Principles</p>
+      <h2 className="section-title text-center mb-12">What we will not compromise on</h2>
+      <dl className="space-y-10">
+        {values.map((value) => (
+          <div key={value.title}>
+            <dt className="text-lg font-bold text-slate-100 mb-2">{value.title}</dt>
+            <dd className="readable">{value.description}</dd>
+          </div>
+        ))}
+      </dl>
+    </Section>
+
+    <Section variant="muted" className="section-y">
+      <div className="split-section split-section--reverse">
+        <div>
+          <p className="section-label mb-2">Delivery</p>
+          <h2 className="section-title mb-10">Your project, step by step</h2>
+          <ProcessSteps steps={deliveryProcess} />
+        </div>
+        <ImageFrame
+          src={images.team}
+          alt="Swittech team"
+          aspect="aspect-[3/4]"
+          label="Kigali, Rwanda"
+        />
+      </div>
+    </Section>
+
+    <Section variant="dark" className="section-y">
+      <div className="text-center">
+        <ImageFrame
+          src={images.hero}
+          alt="Office location"
+          aspect="aspect-[21/9]"
+          className="mb-8 max-w-md mx-auto opacity-90"
+        />
+        <h2 className="text-2xl font-bold mb-4">Headquarters</h2>
+        <p className="text-slate-300 mb-2">{brand.address}</p>
+        <p className="text-slate-400 text-sm mb-6">{brand.addressDetail}</p>
+        <p className="text-slate-300">
+          <a href={`mailto:${brand.email}`} className="text-brand-primary hover:underline">
+            {brand.email}
+          </a>
+          {' · '}
+          <a href={`tel:${brand.phone.replace(/\s/g, '')}`} className="text-brand-primary hover:underline">
+            {brand.phone}
+          </a>
+        </p>
+      </div>
+    </Section>
+
+    <CTASection
+      title="See if we are the right fit"
+      description="We are selective—we want engagements where we can deliver clear value. A short call is enough to know if we should work together."
+      primaryLabel="Book a discovery call"
+      image={images.team}
+    />
+
+    <Footer />
+  </div>
+);
 
 export default About;
